@@ -1,0 +1,67 @@
+<style>
+  body {
+    background-image: url('https://img.freepik.com/free-vector/blue-futuristic-networking-technology_53876-97395.jpg?size=626&ext=jpg'); /* Replace 'your-background-image-url.jpg' with the actual URL or path to your background image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-container {
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+  }
+</style>
+
+<div class="form-container">
+  <h2 class="text-center mb-4">Edit your Profile</h2>
+
+  <%= form_with(model: @user, url: user_path(@user), method: :patch, local: true) do |form| %>
+    <% if @user.errors.any? %>
+      <div class="alert alert-danger">
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :name, class: 'control-label' %>
+      <%= form.text_field :name, class: 'form-control', required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :contactno, class: 'control-label' %>
+      <%= form.text_field :contactno, class: 'form-control', required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :email %>
+      <%= form.email_field :email, class: 'form-control', required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :password %>
+      <%= form.password_field :password, class: 'form-control', required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :password_confirmation %>
+      <%= form.password_field :password_confirmation, class: 'form-control', required: true %>
+    </div>
+
+    <div class="text-center">
+      <%= form.submit 'Edit', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>
+
+

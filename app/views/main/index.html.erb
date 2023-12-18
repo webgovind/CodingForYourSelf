@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Oasis</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            background: #1e1e1e; /* Dark background color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #fff; /* Text color */
+            overflow: hidden; /* Hide overflow to prevent scrollbars */
+        }
+
+        .animated-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            color: #66CDAA; /* Header color */
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .cta-buttons a {
+            text-decoration: none;
+            color: #fff; /* Button text color */
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.1s ease;
+            background-color: #3498db; /* Button background color */
+            border: 2px solid #2980b9; /* Border color for all buttons */
+        }
+
+        .cta-buttons a.sign-in {
+            background-color: #2ecc71; /* Background color for Sign In button */
+            border: 2px solid #27ae60; /* Border color for Sign In button */
+        }
+
+        .cta-buttons a:hover {
+            background-color: #555;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-background"></div>
+    <div class="container">
+        <h1>CodingForYourSelf</h1>
+        <div class="cta-buttons">
+            <a href="authentication/users/new">Start Coding</a>
+            <a href="users/sign_in" class="sign-in">Explore</a>
+        </div>
+    </div>
+</body>
+</html>
